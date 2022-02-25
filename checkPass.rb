@@ -54,6 +54,16 @@ def check_password(password)
 
     # parse response data
     final_results = parse_response(results, hash_prefix)
+
+    match = final_results.find { |p| p[:full_hash] == hashed_password }
+
+    # if original full password hash is found in response data (prefix + any of the suffixes returned)
+    # return the object, if no match then return nil
+    if match 
+        return match
+    else
+        return nil
+    end
 end
 
 # parse_response method:
@@ -73,4 +83,4 @@ end
 
 # PROGRAM START
 
-puts check_password("kevin")
+puts check_password("password")
