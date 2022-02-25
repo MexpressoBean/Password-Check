@@ -82,5 +82,22 @@ end
 
 
 # PROGRAM START
+if ARGV[0]
+    password_to_check = ARGV[0]
+    start_time = Time.now 
+    password_check_result = check_password(password_to_check)
+    stop_time = Time.now
+    delta = stop_time - start_time
 
-puts check_password("password")
+    if password_check_result
+        puts "\'#{password_to_check}\' found in bad password data!\nHash Found: #{password_check_result[:full_hash]}\nCount: #{password_check_result[:count]}" 
+        puts "#{delta} seconds elapsed\n\n"
+    else
+        puts "\'#{password_to_check}\' NOT found! Password is not located in known bad password data."
+        puts "#{delta} seconds elapsed\n\n"
+    end
+else
+    puts "ERROR: Invalid input. Please enter a string to check as comand line argument!"
+end
+
+# PROGRAM END
