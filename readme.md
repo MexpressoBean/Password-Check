@@ -40,6 +40,14 @@ Count: 248071
 0.2220112 seconds elapsed
 ```
 
+NOTE: Not including a string as a command line arg will result in this error message.  See example below:
+
+```bash
+ruby .\checkPass.rb  
+
+ERROR: Invalid input. Please enter a string to check as comand line argument!
+```
+
 ## Background Info on HIBP Project
 In this script, the check against known bad passwords is done by making a request to the [HaveIBeenPwned API](https://haveibeenpwned.com/API/v3#PwnedPasswords)
 
