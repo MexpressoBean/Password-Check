@@ -45,7 +45,7 @@ NOTE: Not including a string as a command line arg will result in this error mes
 ```bash
 ruby .\checkPass.rb  
 
-ERROR: Invalid input. Please enter a string to check as comand line argument!
+ERROR: Invalid input. Please enter a string to check as command line argument!
 ```
 
 ## Background Info on HIBP Project
